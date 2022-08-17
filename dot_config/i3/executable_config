@@ -1,0 +1,153 @@
+#-------------------Nojipiz-i3-Config-File-------------------------------
+
+set $mod Mod4
+
+#--------------------------EXECUTABLES-----------------------------------
+exec_always "bash ~/.config/polybar/launch.sh"
+exec "fluxgui"
+exec "setxkbmap latam"
+exec "ip link set wlp4s0 down"
+exec_always feh --bg-fill $HOME/Images/Wallpapers/nord.jpg
+exec_always "xmodmap ~/.config/xmodmap/custom_config"
+#-------------------------------------------------------------------------
+
+#--------------------------FONTS------------------------------------------
+font pango:inconsolata 9
+font-0 = FontAwesome5Free:style=Solid:pixelsize=10:antialias=false;3
+#-------------------------------------------------------------------------
+
+#---------------------------WINDOWS---------------------------------------
+for_window [class="^.*"] border pixel 0Zc
+gaps inner 10
+hide_edge_borders vertical
+set $unfocused_border #000000
+set $focused_border #000000
+
+for_window [workspace=""] floating enable
+floating_minimum_size 300 x 200
+#floating_maximum_size 500 x 310
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+#--------------------------------------------------------------------------
+
+#----------------------AUDIO&BRIGHTNESS------------------------------------
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym XF86MonBrightnessUp exec sudo -S bash $HOME/.config/i3/scripts/brightnessUp.sh
+bindsym XF86MonBrightnessDown exec sudo -S bash $HOME/.config/i3/scripts/brightnessDown.sh
+#---------------------------------------------------------------------------
+
+#-------------------------BINDS---------------------------------------------
+floating_modifier $mod
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+braceright exec $HOME/.config/i3/scripts/openTerminalSameDir.sh
+bindsym $mod+Shift+q kill
+bindsym $mod+z exec rofi -show drun -show-icons
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+c reload
+bindsym Print exec scrot $HOME/Images/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+Shift+r restart
+bindsym $mod+r mode "resize"
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Windows Movement
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Windows movement vim style
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+
+# Windows Split
+bindsym $mod+d split h
+bindsym $mod+v split v
+
+# Container Layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Container Focus
+bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+
+#--------------------------------------------------------------------------------
+
+#----------------------------------WORKSPACES------------------------------------
+set $ws1 "1: Navg  "
+set $ws2 "2: Code  "
+set $ws3 "3: Edit  "
+set $ws4 "4: Game  "
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9: Spotify  "
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+#------------------------------------------------------------------------------
+
+#---------------------------------------APPLICATIONS---------------------------
+for_window [class="Dbeaver"] move to workspace $ws2
+for_window [class="jetbrains-idea-ce"] move to workspace $ws2 for_window [class="Subl3"] move to workspace $ws3
+for_window [class="Steam"] move to workspace $ws4
+for_window [class="Chromium"] move to workspace $ws1
+for_window [class="Olivia"] move to workspace $ws9
+for_window [class="Spotify"] move to workspace $ws9
+for_window [class="Psst"] move to workspace $ws9
+#------------------------------------------------------------------------------
+
+#---------------------------------------FUNCTIONS------------------------------
+mode "resize" {
+        bindsym Left resize shrink width 15 px or 15 ppt
+        bindsym Down resize grow height 15 px or 15 ppt
+        bindsym Up resize shrink height 15 px or 15 ppt
+        bindsym Right resize grow width 15 px or 15 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+#------------------------------------------------------------------------------
+#------------------------------------BAR---------------------------------------
+
+
+    

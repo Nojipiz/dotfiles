@@ -1,0 +1,234 @@
+[module/i3]
+type = internal/i3
+label-mode = %mode%
+label-mode-padding = 4
+label-mode-background = #e60053
+
+;Focused
+label-focused = %name%
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background-mod}
+label-focused-underline = ${colors.foreground}
+label-focused-padding = 3
+label-focused-border = ${colors.foreground}
+
+;Unfocused
+label-unfocused = %name%
+label-unfocused-padding = 3
+
+;Visible
+label-visible = %name%
+label-visible-foreground = ${colors.foreground}
+label-visible-underline = #555555
+label-visible-padding = 2
+
+;Urgent
+label-urgent = %name%
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 2
+
+;Separator
+label-separator = |
+label-separator-padding = 1
+label-separator-foreground = ${colors.foreground}
+
+[module/wireless-network]
+type = internal/network
+interface = wlp4s0
+interval = 3.0
+format-connected-prefix = " "
+format-connected-background = ${colors.background}
+format-connected-foreground = ${colors.foreground}
+format-connected = "   <ramp-signal> <label-connected>  "
+format-connected-underline = #ff4d4d
+label-connected =
+
+format-disconnected = " no wifi :( "
+format-disconnected-background = ${colors.background}
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = "    0%"
+ramp-signal-1 = "    25%"
+ramp-signal-2 = "    50%"
+ramp-signal-3 = "    75%"
+ramp-signal-4 = "    100%"
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/speed]
+type = internal/network
+interface = wlp4s0
+interval = 5.0
+accumulate-stats = true
+unknown-as-up = true
+format-connected = <label-connected>
+format-connected-font = 3
+format-connected-prefix = 直
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = 睊
+label-connected = "%{A1:networkmanager_dmenu &:} %essid%  %downspeed%  %upspeed%%{A}"
+label-disconnected = "%{A1:networkmanager_dmenu &:} Disconnected%{A}"
+
+
+[module/wired-network]
+type = internal/network
+interface = enp3s0
+interval = 5.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = ""
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/date]
+type = internal/date
+interval = 5
+date = 
+date-alt = " %Y-%m-%d"
+time = "   %a %b %d     %I:%M %p  "
+time-alt = %H:%M:%S
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #ff4d4d
+label = %date% %time%
+
+[module/volume]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_05_00.6.analog-stereo
+master-soundcard = hw:1
+speaker-soundcard = hw:1
+headphone-soundcard = hw:1
+master-mixer = Master
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+headphone-id = 9
+mapped = true
+
+format-muted-background = ${colors.background}
+format-volume-background = ${colors.background}
+format-volume = "   <ramp-volume>  <label-volume>  "
+format-volume-prefix = " "
+label-muted = " mute   "
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 99
+
+format-full-background = ${colors.background}
+format-charging-background = ${colors.background}
+format-charging = "⁣   <animation-charging> <label-charging>"
+format-charging-underline = #ff4d4d
+
+format-charging-suffix = "   "
+
+format-discharging-background = ${colors.background}
+format-discharging = "⁣  <ramp-capacity> <label-discharging>  "
+format-discharging-underline = #ff4d4d
+
+format-full =  
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-font = 2
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = "  "
+label-open-background = ${colors.background}
+label-open-foreground = ${colors.foreground}
+label-close = "    cancel   "
+label-close-background = ${colors.background}
+label-close-foreground = ${colors.foreground}
+label-separator = " "
+label-separator-foreground = ${colors.foreground}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = "power off   "
+menu-0-1-exec = menu-open-2
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = "systemctl reboot"
+menu-2-0 = power off
+menu-2-0-exec = shutdown now
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[module/title]
+type = internal/xwindow
+format = <label>
+label = "%title%"
+label-maxlen = 40
+label-empty = Desktop
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format = <label>
+format-prefix = 
+format-prefix-font = 3
+label = " %percentage%%"
+
+[module/memory]
+type = internal/memory
+interval = 1
+format = <label>
+format-prefix = ﬙
+format-prefix-font = 3
+label = " %gb_used%"
+
+[module/sysmenu]
+type = custom/text
+content = 
+content-font = 3
+content-foreground = ${colors.primary}
+click-left = ~/.config/polybar/scripts/powermenu.sh &
+
+[module/xkeyboard]
+type = internal/xkeyboard
+label-layout =
+indicator-icon-default = 
+indicator-icon-0 = caps lock;-CL;+CL
+indicator-icon-1 = scroll lock;;+SL
+indicator-icon-2 = num lock;-NL;+NL
+blacklist-0 = scroll lock

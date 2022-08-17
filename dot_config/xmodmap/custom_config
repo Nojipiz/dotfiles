@@ -1,0 +1,7 @@
+! WTF With this config David?
+! Configuration file to change right shift to less and greater key, in my case
+! i use LATAM layout with US keyboard.
+
+remove shift = Shift_R
+keysym Shift_R = less greater
+

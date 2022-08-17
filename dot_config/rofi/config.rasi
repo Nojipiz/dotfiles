@@ -1,0 +1,11 @@
+configuration {
+	font: "Roboto 17";
+	icon-theme: "Numix";
+  display-drun: "";
+  show-icons: true;
+}
+
+element-icon {
+    size:             0.8em ;
+}
+@theme "/usr/share/rofi/themes/android_notification.rasi"

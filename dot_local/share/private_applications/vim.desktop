@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Encoding=UTF-8
+Name=Nvim IDE
+GenericName=Pretty fast IDE for all :3
+Type=Application
+Categories=Development
+Icon=nvim
+Exec=/home/nojipiz/.local/bin/lvim-gui %u
+NoDisplay=false

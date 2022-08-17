@@ -1,0 +1,83 @@
+;-------------------------------------------------
+;                                                ;
+;         Polybar config By Nojipiz              ;
+;                                                ;
+;-------------------------------------------------
+
+include-file = ~/.config/polybar/modules
+
+
+[colorsDIS]
+background = #D8DEE9
+background-mod = #f2f5fa
+foreground = #0d0d0d
+foreground-alt = #0d0d0d
+foreground-ws = #403f3e
+urgent = #c41010
+
+[colors]
+background = #2e2e2e
+background-mod = #1f1f1f
+foreground = #D8DEE9
+foreground-alt = #D8DEE9
+foreground-ws = #403f3e
+urgent = #c41010
+primary = #FFFFFF
+
+;-------
+
+[bar/mainBar]
+monitor =
+monitor-fallback =
+monitor-strict = false
+override-redirect = false
+bottom = false
+fixed-center = true
+width = 100%
+height = 20
+offset-x = 0%
+offset-y = 0%
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius-top = 0.0
+radius-bottom = 0.0
+underline-size = 2
+underline-color = ${colors.foreground}
+padding = 1
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Roboto:size=14;1"
+font-1 = "RobotoMono Nerd Font Mono:pixelsize=20;3"
+font-2 = "RobotoMono Nerd Font Mono:pixelsize=20;4"
+
+
+[bar/top]
+inherit = bar/mainBar
+height = 30
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = i3 
+modules-center = date
+modules-right = wired-network wireless-network volume battery sysmenu
+
+[bar/bottom]
+inherit = bar/mainBar
+bottom = true
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+module-margin-left = 0
+module-margin-right = 0
+modules-left = memory cpu
+modules-center = title
+modules-right = xkeyboard speed
+tray-position = right
+
+
+
+
