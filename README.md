@@ -9,7 +9,7 @@ If you want to copy this, you must replace the "dot" keyword with an actual "." 
 
 ## i3 gaps
 The tiling window manager of choice, the configuration file contains a modification to create a Vim's like keybindings and disable the default bar.
-Also, have a rules of default workspace per application type
+Also, have a rules of default workspace per application type.
 
 ## Polybar
 This config let you two polybars at the same time, one on the top and the other in the bottom of the screen.
