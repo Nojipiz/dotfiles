@@ -13,7 +13,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Fira Code" :size 18 :weight 'semi-light))
+(setq doom-font (font-spec :family "Fira Code" :size 17 :weight 'semi-light))
 (setq doom-theme 'doom-one)
 
 (setq display-line-numbers-type nil)
