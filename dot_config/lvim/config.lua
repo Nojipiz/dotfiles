@@ -77,7 +77,8 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { exe = "prettierd", filetypes = { "html", "vue", "css", "scss" } }
+  { exe = "prettierd", filetypes = { "html", "vue", "css", "scss" } },
+  { exe = "scalafmt", arg = { "--stdin" } }
 }
 
 -- Additional Plugins
