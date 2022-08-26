@@ -41,9 +41,9 @@
 (map! :leader
       :desc "Save File"
       "w" #'save-buffer)
-;;(map! :leader
-;;      :desc "Close Buffer"
-;;      "c" #'evil-delete-buffer)
+(map! :leader
+      :desc "Close Buffer"
+      "c" #'evil-delete-buffer)
 (map! :leader
       :desc "Close Window"
       "q" #'evil-window-delete)
@@ -59,6 +59,11 @@
       "q" #'consult-lsp-diagnostics
       :desc "Rename"
       "r" #'lsp-rename))
+(map! :leader
+      :desc "Comment Line"
+      "/" #'comment-line)
+
+
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
