@@ -16,9 +16,15 @@
 (setq doom-font (font-spec :family "Fira Code" :size 17 :weight 'semi-light))
 (setq doom-theme 'doom-one)
 
+;; Making Doing Emacs Faster
 (setq display-line-numbers-type nil)
+(setq gc-cons-threshold 400000000)
+(setq read-process-output-max (* 2048 1024))
+(setq company-minimum-prefix-length 1
+      company-idle-delay 0.0)
 
 ;; If you use `org' and don't want your org files in the default location below,
+;;
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
@@ -31,13 +37,28 @@
 (map! "C-j" #'evil-window-bottom)
 (map! "C-k" #'evil-window-top)
 
-;; Window Manipulation
+;; Buffer Manipulation
 (map! :leader
       :desc "Save File"
       "w" #'save-buffer)
+;;(map! :leader
+;;      :desc "Close Buffer"
+;;      "c" #'evil-delete-buffer)
 (map! :leader
       :desc "Close Window"
-      "q" #'evil-delete-buffer)
+      "q" #'evil-window-delete)
+
+;; LSP
+(map! :leader
+      (:prefix ("l" . "Lsp Actions")
+      :desc "Code action"
+      "a" #'lsp-execute-code-action
+      :desc "Get documentation"
+      "d" #'+lookup/documentation
+      :desc "List errors"
+      "q" #'consult-lsp-diagnostics
+      :desc "Rename"
+      "r" #'lsp-rename))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
