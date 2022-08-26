@@ -18,19 +18,21 @@
 
 ;; Making Doing Emacs Faster
 (setq display-line-numbers-type nil)
-(setq gc-cons-threshold 400000000)
-(setq read-process-output-max (* 2048 1024))
+(setq gc-cons-threshold 800000000)
+(setq read-process-output-max (* 4096 1024))
 (setq company-minimum-prefix-length 1
       company-idle-delay 0.0)
 
 ;; If you use `org' and don't want your org files in the default location below,
-;;
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+;; Movements Elements
 (map! :leader
       :desc "Open Neotree"
       "e" #'neotree-toggle)
+(setq-default evil-escape-key-sequence "ii")
+
 ;; Window Movement
 (map! "C-h" #'evil-window-left)
 (map! "C-l" #'evil-window-right)
