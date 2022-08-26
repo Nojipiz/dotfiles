@@ -60,6 +60,7 @@ export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH="$PATH:/home/nojipiz/.local/share/coursier/bin"
 export LANG='es_CO.utf8'
+export EDITOR='nvim'
 
 # Git commands
 alias g='lazygit'
