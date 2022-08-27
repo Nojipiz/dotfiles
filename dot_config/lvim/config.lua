@@ -5,6 +5,9 @@ lvim.format_on_save = true
 lvim.keys.insert_mode["ii"] = "<Esc>"
 lvim.leader = "space"
 
+-- Dashboard Configuration File
+require('user.dashboard')
+
 -- Visuals Configuration File
 require('user.visuals')
 
