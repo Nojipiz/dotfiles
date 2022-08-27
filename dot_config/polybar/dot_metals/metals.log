@@ -1,8 +1,0 @@
-2022.08.27 09:34:41 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/nojipiz/.config/polybar/.metals/lsp.trace.json or /home/nojipiz/.cache/metals/lsp.trace.json[0m
-2022.08.27 09:34:41 INFO  logging to file /home/nojipiz/.config/polybar/.metals/metals.log[0m
-2022.08.27 09:34:41 INFO  Started: Metals version 0.11.8 in workspace '/home/nojipiz/.config/polybar' for client Neovim 0.8.0.[0m
-2022.08.27 09:34:41 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.[0m
-2022.08.27 09:34:42 INFO  time: initialize in 1.19s[0m
-2022.08.27 09:34:42 WARN  Build server is not auto-connectable.[0m
-2022.08.27 09:34:42 WARN  no build tool detected in workspace '/home/nojipiz/.config/polybar'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
-2022.08.27 10:08:04 INFO  shutting down Metals[0m
