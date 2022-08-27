@@ -31,6 +31,7 @@ lvim.builtin.alpha.dashboard.section.header.val = {
 vim.o.guifont = "Fira Code:h9"
 
 -- My own fast theme change function
+lvim.keys.normal_mode["|"] = ":lua ToggleTheme() <cr> "
 function ToggleTheme()
   if (vim.api.nvim_get_var("colors_name") == "onedarker") then
     vim.o.background = "light"
