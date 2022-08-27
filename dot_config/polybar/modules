@@ -7,7 +7,7 @@ label-mode-background = #e60053
 ;Focused
 label-focused = %name%
 label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.background-mod}
+label-focused-background = ${colors.background-focused}
 label-focused-underline = ${colors.foreground}
 label-focused-padding = 3
 label-focused-border = ${colors.foreground}
@@ -41,19 +41,19 @@ format-connected-prefix = " "
 format-connected-background = ${colors.background}
 format-connected-foreground = ${colors.foreground}
 format-connected = "   <ramp-signal> <label-connected>  "
-format-connected-underline = #ff4d4d
+format-connected-underline = ${colors.primary}
 label-connected =
 
 format-disconnected = " no wifi :( "
 format-disconnected-background = ${colors.background}
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.foreground}
 
 ramp-signal-0 = "    0%"
 ramp-signal-1 = "    25%"
 ramp-signal-2 = "    50%"
 ramp-signal-3 = "    75%"
 ramp-signal-4 = "    100%"
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.foreground}
 
 [module/speed]
 type = internal/network
@@ -75,16 +75,16 @@ type = internal/network
 interface = enp3s0
 interval = 5.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${colors.primary}
 format-connected-prefix = ""
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.foreground}
 
 
 [module/date]
@@ -94,8 +94,8 @@ date =
 date-alt = " %Y-%m-%d"
 time = "   %a %b %d     %I:%M %p  "
 time-alt = %H:%M:%S
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ff4d4d
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.primary}
 label = %date% %time%
 
 [module/volume]
@@ -131,16 +131,16 @@ full-at = 99
 format-full-background = ${colors.background}
 format-charging-background = ${colors.background}
 format-charging = "⁣   <animation-charging> <label-charging>"
-format-charging-underline = #ff4d4d
+format-charging-underline = ${colors.primary}
 
 format-charging-suffix = "   "
 
 format-discharging-background = ${colors.background}
 format-discharging = "⁣  <ramp-capacity> <label-discharging>  "
-format-discharging-underline = #ff4d4d
+format-discharging-underline = ${colors.primary}
 
 format-full =  
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
@@ -149,7 +149,7 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 ramp-capacity-font = 2
 
 animation-charging-0 = 
@@ -157,7 +157,7 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/powermenu]
@@ -221,7 +221,7 @@ label = " %gb_used%"
 type = custom/text
 content = 
 content-font = 3
-content-foreground = ${colors.primary}
+content-foreground = ${colors.foreground}
 click-left = ~/.config/polybar/scripts/powermenu.sh &
 
 [module/xkeyboard]

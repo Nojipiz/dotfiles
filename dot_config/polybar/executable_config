@@ -6,23 +6,12 @@
 
 include-file = ~/.config/polybar/modules
 
-
-[colorsDIS]
-background = #D8DEE9
-background-mod = #f2f5fa
-foreground = #0d0d0d
-foreground-alt = #0d0d0d
-foreground-ws = #403f3e
-urgent = #c41010
-
 [colors]
-background = #2e2e2e
-background-mod = #1f1f1f
-foreground = #D8DEE9
-foreground-alt = #D8DEE9
-foreground-ws = #403f3e
-urgent = #c41010
-primary = #FFFFFF
+background = #1A1B26
+background-focused = #22272E
+foreground = #C0CAF5
+urgent = #C41010
+primary = #7AA2F7
 
 ;-------
 
@@ -50,7 +39,6 @@ module-margin-right = 0
 font-0 = "Roboto:size=14;1"
 font-1 = "RobotoMono Nerd Font Mono:pixelsize=20;3"
 font-2 = "RobotoMono Nerd Font Mono:pixelsize=20;4"
-
 
 [bar/top]
 inherit = bar/mainBar
