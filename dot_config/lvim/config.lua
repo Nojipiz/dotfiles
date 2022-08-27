@@ -23,7 +23,7 @@ require('user.intellisense')
 -- Additional Plugins
 lvim.plugins = {
   { -- Theme
-    "sainnhe/edge"
+    "folke/tokyonight.nvim"
   },
   { -- Plugins for databases
     "kristijanhusak/vim-dadbod-ui",
