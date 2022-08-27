@@ -1,1 +1,0 @@
-2022.08.16 15:47:48 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/nojipiz/.config/lvim/.metals/lsp.trace.json or /home/nojipiz/.cache/metals/lsp.trace.json[0m
