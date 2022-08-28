@@ -32,10 +32,10 @@ lvim.plugins = {
       "kristijanhusak/vim-dadbod-completion"
     }
   },
-  { -- Scala support
-    "scalameta/nvim-metals",
-    config = function()
-      require("user.metals").config()
-    end,
-  },
+  -- { -- Scala support
+  --   "scalameta/nvim-metals",
+  --   config = function()
+  --     require("user.metals").config()
+  --   end,
+  -- },
 }

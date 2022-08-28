@@ -25,7 +25,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { exe = "prettierd", filetypes = { "html", "vue", "css", "scss" } },
+  { exe = "prettierd", filetypes = { "html", "vue", "css", "scss", "typescriptreact" } },
   { exe = "scalafmt", arg = { "--stdin" } }
 }
 
@@ -36,10 +36,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- Tailwind
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tailwindcss" })
-require("lvim.lsp.manager").setup("tailwindcss", {
-  filetypes = { "typescriptreact" }
-})
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tailwindcss" })
+-- require("lvim.lsp.manager").setup("tailwindcss", {
+--   filetypes = { "typescriptreact" }
+-- })
 
 -- Scala
 vim.api.nvim_create_autocmd("BufEnter", {
