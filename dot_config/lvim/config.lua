@@ -17,8 +17,11 @@ require('user.terminal')
 -- LuaLine Configuration File
 require('user.lualine')
 
--- LuaLine Configuration File
+-- intellisense Configuration File
 require('user.intellisense')
+
+--Orgmode
+require('user.orgmode')
 
 -- Additional Plugins
 lvim.plugins = {
@@ -32,6 +35,12 @@ lvim.plugins = {
       "kristijanhusak/vim-dadbod-completion"
     }
   },
+  {
+    "nvim-orgmode/orgmode",
+    config = function()
+      require('orgmode').setup {}
+    end
+  }
   -- { -- Scala support
   --   "scalameta/nvim-metals",
   --   config = function()
