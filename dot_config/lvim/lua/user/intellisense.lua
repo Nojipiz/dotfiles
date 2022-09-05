@@ -3,13 +3,14 @@
 --
 
 lvim.builtin.cmp.experimental.ghost_text = true
-lvim.lsp.automatic_servers_installation = true
+lvim.lsp.installer.setup.automatic_installation = true
 
 -- Tree sitter
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
+  "scala",
   "javascript",
   "json",
   "lua",
@@ -19,7 +20,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "css",
   "rust",
   "java",
-  "scala",
   "yaml",
 }
 

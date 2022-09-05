@@ -1,5 +1,5 @@
 -- General
-vim.opt.number = false
+vim.opt.relativenumber = true
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.keys.insert_mode["ii"] = "<Esc>"
