@@ -1,0 +1,10 @@
+cache/
+.git/
+.github/
+lib/
+log/
+plugins/
+templates/
+themes/
+tools/
+.*
