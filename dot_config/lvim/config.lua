@@ -8,6 +8,7 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.builtin.orgmode = { active = false }
 
+
 -- Dashboard Configuration File
 require('user.dashboard')
 
