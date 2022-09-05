@@ -6,6 +6,7 @@ lvim.leader = "space"
 lvim.keys.insert_mode["ii"] = "<Esc>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.builtin.orgmode = { active = false }
 
 -- Dashboard Configuration File
 require('user.dashboard')
@@ -89,12 +90,14 @@ lvim.plugins = {
       "kristijanhusak/vim-dadbod-completion"
     }
   },
-  -- {
-  --   "nvim-orgmode/orgmode",
-  --   config = function()
-  --     require('orgmode').setup {}
-  --   end
-  -- },
+  {
+    "nvim-orgmode/orgmode",
+    keys = { "go", "gC" },
+    ft = { "org" },
+    config = function()
+      require("user.orgmode").setup()
+    end
+  },
   -- { -- Scala support
   --   "scalameta/nvim-metals",
   --   config = function()

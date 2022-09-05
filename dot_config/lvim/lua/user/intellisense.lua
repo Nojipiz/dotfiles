@@ -21,6 +21,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "org"
 }
 
 local formatters = require "lvim.lsp.null-ls.formatters"
