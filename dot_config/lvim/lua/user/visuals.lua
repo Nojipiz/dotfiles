@@ -9,7 +9,7 @@ lvim.builtin.notify.active = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Config for Neovide GUI
-vim.o.guifont = "Fira Code:h12"
+vim.o.guifont = "Fira Code:h9"
 
 -- My own fast theme change function
 lvim.keys.normal_mode["|"] = ":lua ToggleTheme() <cr> "

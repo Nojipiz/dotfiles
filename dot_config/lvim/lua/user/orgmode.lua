@@ -1,32 +1,17 @@
-local M = {}
+-- Load custom tree-sitter grammar for org filetype
+require('orgmode').setup_ts_grammar()
 
-M.setup = function()
-  local status_ok, org_mode = pcall(require, "orgmode")
-  if not status_ok then
-    return
-  end
-  org_mode.setup {
-    org_agenda_files = { "~/shared/orgs/**/*" },
-    org_default_notes_file = "~/shared/orgs/refile.org",
-    org_agenda_templates = {
-      T = {
-        description = "Todo",
-        template = "* TODO %?\n  DEADLINE: %T",
-        target = "~/shared/orgs/todos.org",
-      },
-      w = {
-        description = "Work todo",
-        template = "* TODO %?\n  DEADLINE: %T",
-        target = "~/shared/orgs/work.org",
-      },
-    },
-    mappings = {
-      global = {
-        org_agenda = "go",
-        org_capture = "gC",
-      },
-    },
-  }
-end
+-- Tree-sitter configuration
+require 'nvim-treesitter.configs'.setup {
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = { 'org' },
+  },
+  ensure_installed = { 'org' }, -- Or run :TSUpdate org
+}
 
-return M
+require('orgmode').setup({
+  org_agenda_files = { '~/Downloads/org/*', '~/Downloads/org/*' },
+  org_default_notes_file = '~/Downloads/org/test.org*',
+})

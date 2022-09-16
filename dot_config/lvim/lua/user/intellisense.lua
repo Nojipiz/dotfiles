@@ -21,12 +21,11 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
-  "org"
 }
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  -- { command = "prettierd", filetypes = { "html", "vue", "css", "scss", "typescriptreact" } },
+  { command = "prettierd", filetypes = { "html", "vue", "css", "scss", "typescriptreact", "typescript" } },
   { command = "scalafmt", arg = { "--stdin" } }
 }
 
