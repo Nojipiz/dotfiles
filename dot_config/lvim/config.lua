@@ -95,8 +95,10 @@ lvim.plugins = {
       require('orgmode').setup {}
     end
   },
-  { -- Scala support
+  { -- Scala Support
     "scalameta/nvim-metals",
+    config = function()
+      require("user.metals").config()
+    end,
   },
-
 }
