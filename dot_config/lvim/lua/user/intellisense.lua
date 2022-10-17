@@ -1,7 +1,6 @@
 --
 -- Code Completion Stuff
 --
-
 lvim.builtin.cmp.experimental.ghost_text = true
 lvim.lsp.installer.setup.automatic_installation = false
 
@@ -26,7 +25,9 @@ lvim.builtin.treesitter.ensure_installed = {
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "prettierd", filetypes = { "html", "vue", "css", "scss", "typescriptreact", "typescript" } },
+  { command = "scalafmt", args = { "--stdin" }, filetypes = { "scala", "sbt" } }
 }
+
 
 -- Databases
 vim.api.nvim_create_autocmd("BufEnter", {

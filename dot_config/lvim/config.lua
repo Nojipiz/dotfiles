@@ -22,9 +22,6 @@ require('user.lualine')
 -- intellisense Configuration File
 require('user.intellisense')
 
---Orgmode
-require('user.orgmode')
-
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
   -- for input mode
@@ -52,36 +49,8 @@ lvim.builtin.which_key.mappings["t"] = {
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
 
--- -- change UI setting of `LspInstallInfo`
--- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
--- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
--- lvim.lsp.installer.setup.ui.border = "rounded"
--- lvim.lsp.installer.setup.ui.keymaps = {
---     uninstall_server = "d",
---     toggle_server_expand = "o",
--- }
-
--- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
--- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
-
--- -- you can set a custom on_attach function that will be used for all the language servers
--- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
--- lvim.lsp.on_attach_callback = function(client, bufnr)
---   local function buf_set_option(...)
---     vim.api.nvim_buf_set_option(bufnr, ...)
---   end
---   --Enable completion triggered by <c-x><c-o>
---   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
--- end
-
 -- Additional Plugins
 lvim.plugins = {
-  { -- Theme
-    "folke/tokyonight.nvim"
-  },
   { -- Plugins for databases
     "kristijanhusak/vim-dadbod-ui",
     requires = {
@@ -89,16 +58,10 @@ lvim.plugins = {
       "kristijanhusak/vim-dadbod-completion"
     }
   },
-  {
-    "nvim-orgmode/orgmode",
-    config = function()
-      require('orgmode').setup {}
-    end
-  },
-  { -- Scala Support
-    "scalameta/nvim-metals",
-    config = function()
-      require("user.metals").config()
-    end,
-  },
+  -- { -- Scala Support
+  --   "scalameta/nvim-metals",
+  --   config = function()
+  --     require("user.metals").config()
+  --   end,
+  -- },
 }

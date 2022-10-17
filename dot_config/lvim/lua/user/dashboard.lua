@@ -27,10 +27,20 @@ lvim.builtin.alpha.dashboard.section.header.val = {
   [[                             Welcome back! Nojipiz                            ]],
 }
 
-lvim.builtin.alpha.dashboard.section.buttons.entries[1] = lvim.builtin.alpha.dashboard.section.buttons.entries[2]
-lvim.builtin.alpha.dashboard.section.buttons.entries[2] = lvim.builtin.alpha.dashboard.section.buttons.entries[4]
-lvim.builtin.alpha.dashboard.section.buttons.entries[4] = { "SPC d", "  Database Mode", "<CMD>DBUI<CR>" }
-lvim.builtin.alpha.dashboard.section.buttons.entries[5] = { "SPC ", "  Org Mode", "<CMD>lua print('lol')<cr>" }
+local status_ok, dashboard = pcall(require, "alpha.themes.dashboard")
+if (status_ok) then
+  local function button(sc, txt, keybind, keybind_opts)
+    local b = dashboard.button(sc, txt, keybind, keybind_opts)
+    b.opts.hl_shortcut = "Macro"
+    return b
+  end
+
+  local buttons = lvim.builtin.alpha.dashboard.section.buttons.val
+  buttons[1] = buttons[2]
+  buttons[2] = buttons[4]
+  buttons[4] = button("d", lvim.icons.ui.Stacks .. " Database Mode", "<CMD>DBUI<CR>")
+  buttons[5] = button("u", lvim.icons.ui.Bug .. "  Org Mode", "<CMD>lua print('lol')<cr>")
+end
 
 local text = require "lvim.interface.text"
 lvim.builtin.alpha.dashboard.section.footer.val = text.align_center({ width = 0 }, {
