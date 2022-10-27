@@ -39,15 +39,6 @@ lvim.builtin.telescope.defaults.mappings = {
 }
 
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
-}
 
 -- Additional Plugins
 lvim.plugins = {
@@ -58,10 +49,7 @@ lvim.plugins = {
       "kristijanhusak/vim-dadbod-completion"
     }
   },
-  -- { -- Scala Support
-  --   "scalameta/nvim-metals",
-  --   config = function()
-  --     require("user.metals").config()
-  --   end,
-  -- },
+  { -- Scala Support
+    "scalameta/nvim-metals",
+  }
 }

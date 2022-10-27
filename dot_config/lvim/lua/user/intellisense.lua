@@ -28,7 +28,6 @@ formatters.setup {
   { command = "scalafmt", args = { "--stdin" }, filetypes = { "scala", "sbt" } }
 }
 
-
 -- Databases
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { "*.sql", "*.mysql", "*.pssql" },
