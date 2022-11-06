@@ -22,6 +22,9 @@ require('user.lualine')
 -- intellisense Configuration File
 require('user.intellisense')
 
+-- Orgmode Configuration File
+require('user.org')
+
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
   -- for input mode
@@ -51,5 +54,10 @@ lvim.plugins = {
   },
   { -- Scala Support
     "scalameta/nvim-metals",
+    config = function()
+      require("user.metals").config()
+    end,
+  }, {
+    "nvim-orgmode/orgmode"
   }
 }

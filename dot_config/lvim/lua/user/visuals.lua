@@ -5,7 +5,6 @@
 -- Color scheme and details
 lvim.colorscheme = "tokyonight"
 vim.g.tokyonight_style = "night"
-lvim.builtin.notify.active = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Config for Neovide GUI
