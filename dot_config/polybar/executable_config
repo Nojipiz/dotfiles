@@ -65,7 +65,3 @@ modules-left = memory cpu
 modules-center = title
 modules-right = xkeyboard speed
 tray-position = right
-
-
-
-
