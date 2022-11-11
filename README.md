@@ -4,6 +4,9 @@ My dotfiles for linux based operating systems, this config don't change so much 
 - :zap: Blazingly fast!, no Picom or Compton, runs as fast as possible.
 - :battery: Battery friendly, without unnecessary elements running in the background!
 
+![Desktop Preview](https://github.com/nojipiz/dotfiles/blob/main/preview/desktop_picture.png?raw=true)
+
+![LunarVim Preview](https://github.com/nojipiz/dotfiles/blob/main/preview/lvim_picture.png?raw=true)
 
 If you want to copy this, you must replace the "dot" keyword with an actual "." in the filename.
 
