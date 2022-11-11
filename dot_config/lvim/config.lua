@@ -7,23 +7,11 @@ lvim.keys.insert_mode["ii"] = "<Esc>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
--- Dashboard Configuration File
 require('user.dashboard')
-
--- Visuals Configuration File
 require('user.visuals')
-
--- Terminal Configuration File
 require('user.terminal')
-
--- LuaLine Configuration File
 require('user.lualine')
-
--- intellisense Configuration File
 require('user.intellisense')
-
--- Orgmode Configuration File
-require('user.org')
 
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
@@ -57,7 +45,12 @@ lvim.plugins = {
     config = function()
       require("user.metals").config()
     end,
-  }, {
-    "nvim-orgmode/orgmode"
+  },
+  { -- Orgmode Support
+    "nvim-orgmode/orgmode",
+    config = function()
+      require("user.orgmode").setup()
+    end,
+    ft = { "org" },
   }
 }

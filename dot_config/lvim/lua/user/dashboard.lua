@@ -39,7 +39,7 @@ if (status_ok) then
   buttons[1] = buttons[2]
   buttons[2] = buttons[4]
   buttons[4] = button("d", lvim.icons.ui.Stacks .. " Database Mode", "<CMD>DBUI<CR>")
-  buttons[5] = button("u", lvim.icons.ui.Bug .. "  Org Mode", "<CMD>lua print('lol')<cr>")
+  buttons[5] = button("u", lvim.icons.ui.Bug .. "  Org Mode", "<CMD>e ~/Dropbox/OrgAgenda/Daily Agenda.org<cr>")
 end
 
 local text = require "lvim.interface.text"

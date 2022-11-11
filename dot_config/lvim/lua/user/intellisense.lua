@@ -15,6 +15,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "python",
   "typescript",
+  "org",
   "tsx",
   "css",
   "rust",
