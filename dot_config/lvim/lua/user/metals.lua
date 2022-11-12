@@ -19,7 +19,7 @@ M.config = function()
   }
   metals_config.init_options.statusBarProvider = false
   vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "scala", "sbt", "java" },
+    pattern = { "scala", "sbt" },
     callback = function() require("metals").initialize_or_attach(metals_config) end,
     group = vim.api.nvim_create_augroup("nvim-metals", { clear = true }),
   })
