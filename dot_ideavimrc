@@ -3,6 +3,7 @@ set clipboard+=unnamed
 set clipboard+=ideaput
 set ignorecase smartcase
 set NERDTree
+set relativenumber number
 
 """ Editing and Reloading the Config
 nnoremap \e :e ~/.ideavimrc<CR>
