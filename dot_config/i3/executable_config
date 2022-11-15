@@ -7,7 +7,7 @@ exec_always "bash ~/.config/polybar/launch.sh"
 exec "fluxgui"
 exec "setxkbmap latam"
 exec "ip link set wlp4s0 down"
-exec_always feh --bg-fill $HOME/Images/Wallpapers/nord.jpg
+exec_always feh --bg-fill $HOME/Images/Wallpapers/nord.png
 exec_always "xmodmap ~/.config/xmodmap/custom_config"
 #-------------------------------------------------------------------------
 
@@ -37,14 +37,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym XF86MonBrightnessUp exec sudo -S bash $HOME/.config/i3/scripts/brightnessUp.sh
-bindsym XF86MonBrightnessDown exec sudo -S bash $HOME/.config/i3/scripts/brightnessDown.sh
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 #---------------------------------------------------------------------------
 
 #-------------------------BINDS---------------------------------------------
 floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+braceright exec $HOME/.config/i3/scripts/openTerminalSameDir.sh
 bindsym $mod+Shift+q kill
 bindsym $mod+z exec rofi -show drun -show-icons
 bindsym $mod+f fullscreen toggle
@@ -125,8 +124,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #------------------------------------------------------------------------------
 
 #---------------------------------------APPLICATIONS---------------------------
-for_window [class="Dbeaver"] move to workspace $ws2
-for_window [class="jetbrains-idea-ce"] move to workspace $ws2 for_window [class="Subl3"] move to workspace $ws3
+for_window [class="jetbrains-idea-ce"] move to workspace $ws2 
+for_window [class="Subl3"] move to workspace $ws3
 for_window [class="Steam"] move to workspace $ws4
 for_window [class="Chromium"] move to workspace $ws1
 for_window [class="Olivia"] move to workspace $ws9
@@ -147,7 +146,3 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 #------------------------------------------------------------------------------
-#------------------------------------BAR---------------------------------------
-
-
-    
