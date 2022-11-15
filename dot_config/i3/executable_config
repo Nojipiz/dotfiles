@@ -140,6 +140,7 @@ mode "resize" {
         bindsym Up resize shrink height 15 px or 15 ppt
         bindsym Right resize grow width 15 px or 15 ppt
 
+
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
