@@ -2,6 +2,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # User configuration
 # Exports
+export ZDOTDIR=$HOME/.config/zsh/
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
@@ -26,4 +27,7 @@ alias c='clear'
 # Lunarvim Fast
 alias v='lvim'
 
+# Antidote initialization
+source '/usr/share/zsh-antidote/antidote.zsh'
+antidote load
 eval "$(starship init zsh)"
