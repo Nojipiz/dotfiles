@@ -6,7 +6,6 @@
 
 FUZZY_FINDER="sk -m"
 MULTIPLEXER="zellij"
-MULTIPLEXER_EXTRA_FLAGS="-l compact"
 MULTIPLEXER_CREATE_SESSION="-s"
 MULTIPLEXER_ATTACH_SESSION="a"
 
@@ -21,9 +20,10 @@ session_name=$(basename "$selected_project" | tr . _)
 multiplexer_running=$(pgrep $MULTIPLEXER)
 
 current_sessions=$($MULTIPLEXER ls)
+cd $selected_project
 if [[ $current_sessions == *$session_name* ]]; then
-  $MULTIPLEXER $MULTIPLEXER_EXTRA_FLAGS $MULTIPLEXER_ATTACH_SESSION $session_name
+  $MULTIPLEXER $MULTIPLEXER_ATTACH_SESSION $session_name
 else
-  $MULTIPLEXER $MULTIPLEXER_EXTRA_FLAGS $MULTIPLEXER_CREATE_SESSION $session_name
+  $MULTIPLEXER $MULTIPLEXER_CREATE_SESSION $session_name
 fi
 
