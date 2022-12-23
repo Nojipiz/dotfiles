@@ -1,0 +1,29 @@
+#! /bin/bash
+
+# This script allow to choose a project of the projects folders and
+# opens a sesion of terminal multiplexer over it.
+#
+
+FUZZY_FINDER="sk -m"
+MULTIPLEXER="zellij"
+MULTIPLEXER_EXTRA_FLAGS="-l compact"
+MULTIPLEXER_CREATE_SESSION="-s"
+MULTIPLEXER_ATTACH_SESSION="a"
+
+projects_folders=(~/Proyectos/*  ~/TodoServy/*)
+selected_project=`printf '%s\n' "${projects_folders[@]}" | ${FUZZY_FINDER}`
+
+if [[ -z $selected_project ]]; then
+    exit 0
+fi
+
+session_name=$(basename "$selected_project" | tr . _)
+multiplexer_running=$(pgrep $MULTIPLEXER)
+
+current_sessions=$($MULTIPLEXER ls)
+if [[ $current_sessions == *$session_name* ]]; then
+  $MULTIPLEXER $MULTIPLEXER_EXTRA_FLAGS $MULTIPLEXER_ATTACH_SESSION $session_name
+else
+  $MULTIPLEXER $MULTIPLEXER_EXTRA_FLAGS $MULTIPLEXER_CREATE_SESSION $session_name
+fi
+
