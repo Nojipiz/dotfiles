@@ -4,8 +4,10 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.leader = "space"
 lvim.keys.insert_mode["ii"] = "<Esc>"
-lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<S-l>"] = "<cmd> BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = "<cmd> BufferLineCyclePrev<CR>"
+
+lvim.keys.normal_mode['er'] = "<cmd>lua require('rest-nvim').run()<CR>"
 
 require('user.dashboard')
 require('user.visuals')
@@ -38,12 +40,23 @@ lvim.plugins = {
     requires = {
       "tpope/vim-dadbod",
       "kristijanhusak/vim-dadbod-completion"
-    }
-  },
-  { -- Scala Support
-    "scalameta/nvim-metals",
+    },
     config = function()
-      require("user.metals").config()
+      require("user.database").setup()
+    end
+  },
+  { "nyoom-engineering/oxocarbon.nvim" },
+  -- { -- Scala Support
+  --   "scalameta/nvim-metals",
+  --   config = function()
+  --     require("user.metals").config()
+  --   end,
+  -- },
+  {
+    "rest-nvim/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("user.rest").setup()
     end,
   },
   { -- Orgmode Support
