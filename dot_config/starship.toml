@@ -11,4 +11,6 @@ success_symbol = "[➜](bold purple)" # The "success_symbol" segment is being se
 [gcloud]
 disabled = true
 
+[git_status]
+disabled = true
 
