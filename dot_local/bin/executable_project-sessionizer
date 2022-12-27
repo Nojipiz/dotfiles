@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # This script allow to choose a project of the projects folders and
 # opens a sesion of terminal multiplexer over it.
