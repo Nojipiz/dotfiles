@@ -59,7 +59,7 @@ nnoremap <leader>w :write<CR>
 
 """ Searching and Source Code Navigation
 set incsearch
-nnoremap <leader>f :action SearchEverywhere<CR>
+nnoremap <leader>sf :action SearchEverywhere<CR>
 nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>s :action GotoRelated<CR>
 nnoremap <leader>h :action CallHierarchy<CR>
