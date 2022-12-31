@@ -1,7 +1,7 @@
 -- general
 vim.opt.relativenumber = true
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.leader = "space"
 lvim.keys.insert_mode["ii"] = "<Esc>"
 lvim.keys.normal_mode["<S-l>"] = "<cmd> BufferLineCycleNext<CR>"
