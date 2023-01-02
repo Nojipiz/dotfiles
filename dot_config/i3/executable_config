@@ -7,7 +7,7 @@ exec_always "bash ~/.config/polybar/launch.sh"
 exec "fluxgui"
 exec "setxkbmap latam"
 exec "ip link set wlp4s0 down"
-exec_always feh --bg-fill $HOME/Images/Wallpapers/nord.png
+exec_always feh --bg-fill $HOME/Images/Wallpapers/morado.jpg
 exec_always "xmodmap ~/.config/xmodmap/custom_config"
 #-------------------------------------------------------------------------
 
@@ -97,7 +97,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9: Spotify  "
+set $ws9 "9: Music  "
 set $ws10 "10"
 
 bindsym $mod+1 workspace number $ws1
@@ -124,10 +124,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #------------------------------------------------------------------------------
 
 #---------------------------------------APPLICATIONS---------------------------
-for_window [class="jetbrains-idea-ce"] move to workspace $ws2 
-for_window [class="Subl3"] move to workspace $ws3
-for_window [class="Steam"] move to workspace $ws4
 for_window [class="Chromium"] move to workspace $ws1
+for_window [class="jetbrains-studio"] move to workspace $ws2
+for_window [class="Steam"] move to workspace $ws4
 for_window [class="Olivia"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Psst"] move to workspace $ws9
