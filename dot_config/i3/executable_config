@@ -56,7 +56,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# Windows Movement
+# --- Windows Movement ---
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
 bindsym $mod+Down focus down
@@ -67,11 +67,16 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Windows movement vim style
+# --- Windows Movement Vim Style ---
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 bindsym $mod+j focus down
 bindsym $mod+k focus up
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Windows Split
 bindsym $mod+d split h
