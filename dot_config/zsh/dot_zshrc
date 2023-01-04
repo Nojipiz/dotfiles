@@ -7,13 +7,18 @@ SAVEHIST=5000
 setopt appendhistory
 
 # User configuration
-# Exports
+# -- Exports --
+export LANG='es_CO.utf8'
 export ZDOTDIR=$HOME/.config/zsh/
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
-export PATH="$PATH:/home/nojipiz/.local/share/coursier/bin"
-export LANG='es_CO.utf8'
+# Scala exports
+export PATH="$PATH:~/.local/share/coursier/bin"
+# Android exports
+export ANDROID_HOME=~/Android/Sdk
+export NDK_HOME=$ANDROID_HOME/ndk-bundle
+# Neovim exports 
 export EDITOR='nvim'
 export VISUAL='nvim'
 
