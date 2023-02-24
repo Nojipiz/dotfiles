@@ -17,7 +17,7 @@ export PATH=~/.local/bin:$PATH
 export PATH="$PATH:~/.local/share/coursier/bin"
 # Android exports
 export ANDROID_HOME=~/Android/Sdk
-export NDK_HOME=$ANDROID_HOME/ndk-bundle
+export NDK_HOME=$ANDROID_HOME/ndk/25.1.8937393/
 # Neovim exports 
 export EDITOR='nvim'
 export VISUAL='nvim'
