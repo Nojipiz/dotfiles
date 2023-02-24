@@ -1,5 +1,9 @@
 keybinds clear-defaults=true {
-    
+    normal {
+        bind "Alt n" { NewTab; }
+        bind "Alt h" { GoToPreviousTab; }
+        bind "Alt l" { GoToNextTab; }
+    } 
 }
 
 plugins {
