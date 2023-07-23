@@ -1,5 +1,5 @@
 # :computer: Configuration Files
-## This configuration is stable, I'm working in my current configuration, with the same UI/UX but over NixOS 23.05. You can check it here https://github.com/Nojipiz/dotfiles_nixos
+## This configuration is stable, but i'm working in my current configuration, with the same UI/UX but over NixOS 23.05. You can check it here https://github.com/Nojipiz/dotfiles_nixos
 My dotfiles for linux based operating systems, this config don't change so much of the default configuration in the software so it's nice to grab as a base.
 - :mortar_board: Perfect to study due distraction free environment.
 - :zap: Blazingly fast!, no Picom or Compton, runs as fast as possible.
